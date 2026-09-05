@@ -5,7 +5,7 @@
 - 아키텍처 구성 요소:
   * Client: WireGuard 설정 및 키페어를 사용하여 VPN 터널로 트래픽을 전송하는 출발지 장치
   * WireGuard Tunnel & VPN Server: 도커 환경 내에서 암호화된 터널링 및 종단점(Endpoint) 관리 수행
-  * Policy Engine (policy.json): 트래픽 제어 및 필터링 규칙을 참조하여 허용 여부 결정
+  * Policy Engine (policy.json, policy.go): 트래픽 제어 및 필터링 규칙을 참조하여 허용 여부 결정
   * Validation & Proxy (handler.go, parser_http.go): HTTP 요청 처리, CONNECT 터널링 및 TLS 인터셉션 수행
   * HTTP/HTTPS Server: 정제된 트래픽이 도달하는 최종 목적지 웹서버
 
@@ -18,8 +18,10 @@ proxy_submission/
 ├── docker-compose.yml # 다중 컨테이너 오케스트레이션 및 네트워크 설정
 ├── main.go            # 프록시 서버 진입점 (Entrypoint)
 ├── handler.go         # 코어 프록시 핸들러 로직
+├── flowtrack.go       # IP 및 PORT 번호 파싱
 ├── policy.go          # 정책 엔진 로직 (규칙 로드 및 평가)
-├── policy.json        # 트래픽 제어 및 필터링 규칙 정의 파일
+├── config/
+└─────── policy.json   # 트래픽 제어 및 필터링 규칙 정의 파일
 ├── parser_http.go     # HTTP 트래픽 및 헤더 파싱
 └── logger.go          # 시스템 이벤트 및 트래픽 로그 추적 관리
 

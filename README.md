@@ -38,8 +38,14 @@ proxy_submission/
     chmod +x run.sh 명령은 실행 권한을 run.sh 파일에 추가 합니다 그리고 ./run.sh 는 프록시 및 Docker 환경을 동작시킵니다.
  ## 4. 기능별 테스트 방법 및 결과
  - TLS 트래픽 복호화 (인증서 경고 없는 HTTPS 접속):
-     * 테스트 방법: 생성된 인증서를 활용한 커스텀 인터셉션 모듈을 통해 HTTPS 트래픽을 프록시로 라우팅.
-     * 테스트 결과: 웹 브라우저에서 보안 경고 없이 HTTPS 사이트에 성공적으로 접근하는 것을 확인했습니다. (※ 관련 브라우저 접속 성공 스크린샷 첨부)
+     * 테스트 방법: 생성된 인증서를 활용한 커스텀 인터셉션 모듈 (handler.go)을 통해 HTTPS 트래픽을 프록시로 라우팅.
+     * 테스트 결과: 웹 브라우저에서 보안 경고 없이 HTTPS 사이트에 성공적으로 접근하는 것을 확인했습니다.
+
+       <img width="707" height="57" alt="image" src="https://github.com/user-attachments/assets/7be38bc0-1a50-47ac-9bcb-3a77b6bfc751" />
+
+
+       <img width="1572" height="747" alt="image" src="https://github.com/user-attachments/assets/4dca125c-9990-4e26-9fb8-80f26d74c1a5" />
+
  
  - 프로토콜 지원 (HTTP, HTTPS):
      * 테스트 방법: 안전한 터널과 프록시 파이프라인을 통해 다양한 프로토콜 페이로드를 전송 및 프록시 처리.

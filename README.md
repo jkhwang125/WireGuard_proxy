@@ -58,5 +58,5 @@ proxy_submission/
 
   - 개선 및 확장 계획:
      * 고부하 엔터프라이즈 환경을 위해 parser_http.go의 패킷 파싱 성능 최적화.
-     * logger.go를 활용한 실시간 트래픽 모니터링 및 로그 대시보드 확장.
+     * logger.go를 활용한 실시간 트래픽 모니터링.
  

@@ -4,7 +4,7 @@
 
 - 아키텍처 구성 요소:
   * Client: WireGuard 설정 및 키페어를 사용하여 VPN 터널로 트래픽을 전송하는 출발지 장치
-  * WireGuard Tunnel & VPN Server: 도커 환경 내에서 암호화된 UDP 터널링 및 종단점(Endpoint) 관리 수행
+  * WireGuard Tunnel & VPN Server: 도커 환경 내에서 암호화된 터널링 및 종단점(Endpoint) 관리 수행
   * Policy Engine (policy.json): 트래픽 제어 및 필터링 규칙을 참조하여 허용 여부 결정
   * Validation & Proxy (handler.go, parser_http.go): HTTP 요청 처리, CONNECT 터널링 및 TLS 인터셉션 수행
   * HTTP/HTTPS Server: 정제된 트래픽이 도달하는 최종 목적지 웹서버

@@ -41,15 +41,15 @@ proxy_submission/
      * 테스트 방법: 생성된 인증서를 활용한 커스텀 인터셉션 모듈 (handler.go)을 통해 HTTPS 트래픽을 프록시로 라우팅.
      * 테스트 결과: 웹 브라우저에서 보안 경고 없이 HTTPS 사이트에 성공적으로 접근하는 것을 확인했습니다.
 
-       <img width="707" height="57" alt="image" src="https://github.com/user-attachments/assets/7be38bc0-1a50-47ac-9bcb-3a77b6bfc751" />
-
-
        <img width="1572" height="747" alt="image" src="https://github.com/user-attachments/assets/4dca125c-9990-4e26-9fb8-80f26d74c1a5" />
 
  
- - 프로토콜 지원 (HTTP, HTTPS):
-     * 테스트 방법: 안전한 터널과 프록시 파이프라인을 통해 다양한 프로토콜 페이로드를 전송 및 프록시 처리.
-     * 테스트 결과: HTTP, MySQL, SSH 트래픽에 대한 성공적인 연결 처리 및 트래픽 포워딩을 검증했습니다. (※ 각 프로토콜 테스트 결과 스크린샷 첨부)
+ - 프로토콜 지원 (HTTP):
+     * 테스트 방법: 다양한 방식 (method, host, path) 를 이용하여 HTTP 페이로드를 전송 및 프록시 처리.
+     * 테스트 결과: 차단 대상이 아닌 방식을 이용한 HTTP 트래픽으로는 사이트 접속이 가능하였지만, 차단 대상인 method, host, path 를 이용한 차단, 차단 메시지 출력 및 다른 에러 패이지로 리다이렉트 하였습니다
+
+        <img width="1552" height="737" alt="image" src="https://github.com/user-attachments/assets/feafa676-d0b7-40ef-8b9d-647f5d5e8829" />
+
   
   ## 5. 고려한 문제점, 해결 방안 및 개선·확장 계획
   - 고려한 문제점 및 해결 방안:
